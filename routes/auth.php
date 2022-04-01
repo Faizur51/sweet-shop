@@ -66,8 +66,8 @@ Route::prefix('owner')->name('owner.')->group(function (){
 
 
     Route::middleware('owner')->group(function (){
-        Route::get('logout', [OwnerAuth::class, 'destroy'])->name('logout');
-        Route::get('/dashboard',[\App\Http\Controllers\OwnerController::class,'dashboard']);
+        Route::post('logout', [OwnerAuth::class, 'destroy'])->name('logout');
+        Route::get('/dashboard',[\App\Http\Controllers\Owner\OwnerController::class,'dashboard'])->name('dashboard');
 
     });
 
